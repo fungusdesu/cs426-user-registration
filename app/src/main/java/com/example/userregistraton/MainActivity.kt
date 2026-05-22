@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -437,7 +439,7 @@ fun GenderRadioButtons(modifier: Modifier = Modifier) {
 	val radioOptions = listOf("Male", "Female", "Other")
 	val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[0]) }
 
-	Row(modifier.selectableGroup()) {
+	FlowRow(modifier.selectableGroup()) {
 		radioOptions.forEach { text ->
 			Row (
 				Modifier
